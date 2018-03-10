@@ -11,8 +11,8 @@ new vue({
        testdata:"这是一个测试数据",
        radio: '1',
        showApp:false,
-       info1:'组件01',
-       info2:'组件02',
+       info1:'这是组件01',
+       info2:'这是组件01',
     }
   },
   components: { 
