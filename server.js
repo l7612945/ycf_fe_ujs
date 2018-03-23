@@ -1,51 +1,26 @@
-var http = require('http');
-// var port = require('./port.js');;
-var express = require('express');
-var path = require('path');
-var router = express.Router();
-// var db = require('./db');
-// var userApi = require('./api/userApi');
-
-var webpack = require('webpack');
-var webpackConfig = require('./webpack.config.js');
+const express = require('express');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
 
+const favicon = require('express-favicon');
+const path = require('path');
 
-var app = express();
+const app = express();
+const config = require('./webpack.dev.js');
+const compiler = webpack(config);
 
-// // view engine setup
-// app.set('views', path.join(__dirname, './dist/'));
-app.set('views', path.join(__dirname, 'views/'));  
-app.engine('.html', require('ejs').renderFile);  
-app.set('view engine', 'html');  
-app.use(express.static('dist'));
 
-// webpack编译器
-var compiler = webpack(webpackConfig);
-// webpack-dev-server中间件
-var devMiddleware = require('webpack-dev-middleware')(compiler, {
-    publicPath: webpackConfig.output.publicPath,
-    stats: {
-      colors: true
-    }
-});
-app.use(devMiddleware);
+// Tell express to use the webpack-dev-middleware and use the webpack.config.js
+// configuration file as a base.
+app.use(webpackDevMiddleware(compiler, {
+  publicPath: config.output.publicPath
+}));
 app.use(webpackHotMiddleware(compiler));
 
-
-var routes = require('./router.js');
-// var users = require('./routes/users');
-app.use('/', routes);
-// app.use('/users', users);
-
-// // 后端api路由
-// app.use('/api/user', userApi)
-
-
-
-var server = app.listen(8888, function () {
-  var host = server.address().address;
-  var port = server.address().port;
-
-  console.log('Listening at http://localhost:' + port + '\n')
+// app.use(app.favicon(path.join(__dirname,'favicon.ico')));
+app.use(favicon(__dirname + '/favicon.png'));
+// Serve the files on port 9000.
+app.listen(9000, function () {
+  console.log('Example app listening on port 9000!\n');
 });

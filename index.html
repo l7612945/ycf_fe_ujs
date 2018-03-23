@@ -1,0 +1,31 @@
+<!doctype html lang="zh-CN">
+<html>
+  <head>
+  	<meta charset="UTF-8">
+    <title>Getting Started</title>
+    <link rel="stylesheet" href="./mybuild/main/index.css">
+  </head>
+  <body>
+  	<div id="app">
+  		
+  		{{message}}
+  		<loginbox></loginbox>
+  		<sbox></sbox>
+  	</div>
+  	<script src="https://unpkg.com/vue@2.5.3/dist/vue.js"></script>
+    <script src="./mybuild/iview.js"></script>
+    <script>
+    	console.log(iview);
+    	// Vue.use(iview.default.components.loginbox);
+    	var app = new Vue({
+		  el: '#app',
+		  data: {
+		    message: 'Hello Vue!'
+		  },
+		  // components: { 
+		  //   'loginbox':iview.default.components.loginbox
+		  //  },
+		})
+    </script>
+  </body>
+</html>
