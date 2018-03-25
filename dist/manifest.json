@@ -1,14 +1,10 @@
 {
-  "widgets/t1.js": "../../widgets/t1/index.js",
-  "widgets/t1.css": "../../widgets/t1/index.css",
-  "widgets/t1.js.map": "../../widgets/t1/index.js.map",
-  "widgets/t1.css.map": "../../widgets/t1/index.css.map",
-  "module/search.js": "../../module/search/index.js",
-  "module/search.css": "../../module/search/index.css",
-  "module/search.js.map": "../../module/search/index.js.map",
-  "module/search.css.map": "../../module/search/index.css.map",
-  "module/loginbox.js": "../../module/loginbox/index.js",
-  "module/loginbox.css": "../../module/loginbox/index.css",
-  "module/loginbox.js.map": "../../module/loginbox/index.js.map",
-  "module/loginbox.css.map": "../../module/loginbox/index.css.map"
+  "widgets/input.js": "../widgets/input/index.js",
+  "widgets/input.css": "../widgets/input/index.css",
+  "widgets/input.js.map": "../widgets/input/index.js.map",
+  "widgets/input.css.map": "../widgets/input/index.css.map",
+  "module/search.js": "../module/search/index.js",
+  "module/search.css": "../module/search/index.css",
+  "module/search.js.map": "../module/search/index.js.map",
+  "module/search.css.map": "../module/search/index.css.map"
 }

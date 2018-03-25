@@ -1,0 +1,50 @@
+ 
+@include b(input) {
+    position: relative;
+    font-size: 14px;
+    display: inline-block;
+    width: 180px;
+    @include e(inner) {
+	    background-color: #fff;
+	    background-image: none;
+	    border-radius: 4px;
+	    border: 1px solid #dcdfe6;
+	    box-sizing: border-box;
+	    color: #606266;
+	    display: inline-block;
+	    font-size: inherit;
+	    height: 40px;
+	    line-height: 40px;
+	    outline: none;
+	    padding: 0 15px;
+	    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+	    width: 100%;
+	    &:focus{
+	    	border: 1px solid #18a6fc;
+	    }
+	}
+	@include m(mini) {
+	    height: 24px;
+    	line-height: 24px;
+    	 @include e(inner) {
+    	 	height: 24px;
+    		line-height: 24px;
+    	 }
+	}
+	@include m(small) {
+	    height: 32px;
+    	line-height: 32px;
+    	 @include e(inner) {
+    	 	height: 32px;
+    		line-height: 32px;
+    	 }
+	}
+	@include m(large) {
+	    height: 48px;
+    	line-height: 48px;
+    	 @include e(inner) {
+    	 	height: 48px;
+    		line-height: 48px;
+    	 }
+	}
+}

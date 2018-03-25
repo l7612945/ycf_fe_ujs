@@ -7,7 +7,6 @@ const template = require('html-webpack-template');
 const fs = require("fs");
 const glob = require('glob');
 const hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 let config = merge(common, {
     mode: 'development',
@@ -17,25 +16,17 @@ let config = merge(common, {
     optimization: {
         splitChunks: {
            chunks: "initial",
-            name: 'vendor',
-              // cacheGroups: {
-              //   default:false,
-              //       vendor: {
-              //           test: /node_modules/,
-              //           name: "vendor",
-              //           chunks: "initial"
-              //       },
-              //       commons: {
-              //           name: "commons",
-              //           chunks: "initial"
-              //       }
-              //       // vue:{
-              //       //     name: "vue",
-              //       //     chunks: "initial"
-              //       // }
-              // }
-           
+            name: 'vendor'           
         }
+    },
+    externals: {
+        // vue: {
+        //     root: 'Vue',
+        //     commonjs: 'vue',
+        //     commonjs2: 'vue',
+        //     amd: 'vue'
+        // }
+        vue:'Vue'
     },
     output: {
         filename: '[name]/index.js',
@@ -50,8 +41,8 @@ let config = merge(common, {
     },
     plugins: [
         new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-        new BundleAnalyzerPlugin()
+        new webpack.HotModuleReplacementPlugin()
+        // new BundleAnalyzerPlugin()
     ]
 });
 
@@ -82,10 +73,16 @@ Object.keys(entries).forEach(function(name) {
         filename:  name + '.html',
         minify: false,
         // 每个html的模版，这里多个页面使用同一个模版
-        template: template,
-        bodyHtmlSnippet: fs.readFileSync(entries[name][1]),
-        // 自动将引用插入html
-        inject: false,
+        // template: template,
+        // // devServer: 'http://localhost:8899',
+        // // inlineManifestWebpackName: 'webpackManifest',
+        // bodyHtmlSnippet: fs.readFileSync(entries[name][1]),
+        // // 自动将引用插入html
+        // inject: false,
+
+        template: entries[name][1],
+      // 自动将引用插入html
+        inject: 'body',
         title: type+'_'+name,
         links:[
             {

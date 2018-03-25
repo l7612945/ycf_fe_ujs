@@ -1,14 +1,11 @@
-import sbox from './src/module/search/index.js';
-import loginbox from './src/module/loginbox/index.js';
+import sbox from '../src/module/search/index.js';
 
 
 const components = {
-	sbox,
-	loginbox
+	sbox
 };
 const iview = {
-   sbox:sbox,
-   loginbox:loginbox
+   sbox:sbox
 };
 const install = function(Vue, opts = {}) {
     if (install.installed) return;

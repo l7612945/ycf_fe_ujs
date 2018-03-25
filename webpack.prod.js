@@ -40,10 +40,13 @@ let config = merge(common, {
            
         }
     },
+    externals: {
+        vue:"Vue"
+    },
     output: {
         filename: '[name]/index.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '../../'
+        publicPath: '../'
     },
     devtool: 'cheap-module-source-map',
     module: {
@@ -85,26 +88,33 @@ Object.keys(entries).forEach(function(name) {
     console.log(entries[name][1])
     const plugin = new HtmlWebpackPlugin({
         // 生成出来的html文件名
-        filename: name + '/index.html',
+        filename:  name + '.html',
         minify: false,
         // 每个html的模版，这里多个页面使用同一个模版
-        template: template,
-        bodyHtmlSnippet: fs.readFileSync(entries[name][1]),
-        // template: './src/'+name+'/index.html',
-        // 自动将引用插入html
-        inject: false,
-        title: '_' + name,
-        links: [{
-            href: '../../../favicon.png',
-            rel: 'icon',
-            sizes: '32x32',
-            type: 'image/png'
-        }],
+        // template: template,
+        // // devServer: 'http://localhost:8899',
+        // // inlineManifestWebpackName: 'webpackManifest',
+        // bodyHtmlSnippet: fs.readFileSync(entries[name][1]),
+        // // 自动将引用插入html
+        // inject: false,
+
+        template: entries[name][1],
+      // 自动将引用插入html
+        inject: 'body',
+        title: type+'_'+name,
+        links:[
+            {
+              href: '/favicon.png',
+              rel: 'icon',
+              sizes: '32x32',
+              type: 'image/png'
+            }
+        ],
         scripts:[
             'https://unpkg.com/vue@2.5.3/dist/vue.js'
         ],
         // 每个html引用的js模块，也可以在这里加上vendor等公用模块
-        chunks: ['vendor', name]
+        chunks: ['vendor',name]
     });
     config.plugins.push(plugin);
 })

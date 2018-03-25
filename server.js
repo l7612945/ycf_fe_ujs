@@ -21,6 +21,6 @@ app.use(webpackHotMiddleware(compiler));
 // app.use(app.favicon(path.join(__dirname,'favicon.ico')));
 app.use(favicon(__dirname + '/favicon.png'));
 // Serve the files on port 9000.
-app.listen(9000, function () {
-  console.log('Example app listening on port 9000!\n');
+app.listen(8899, function () {
+  console.log('Example app listening on port 8899!\n');
 });

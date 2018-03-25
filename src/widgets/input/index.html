@@ -8,7 +8,10 @@
 	
   </head>
   <body>
-      <div id="app"><sbox :value1="value1" :value2="value2" :placeholder="placeholder"></sbox></div>
+      <div id="app">
+			<div><y-input :value="value1" :placeholder="placeholder"></y-input></div><br>
+			<div><y-input :value="value1" :placeholder="placeholder" size='small'></y-input></div><br>
+			<div><y-input :value="value1" :placeholder="placeholder" size='large'></y-input></div>
 </div> 
   	<script src="https://unpkg.com/vue@2.5.3/dist/vue.js" type="text/javascript"></script>
 	<!-- <script src="../../widgets/input/index.js" type="text/javascript"></script> -->

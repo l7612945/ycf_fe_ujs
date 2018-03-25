@@ -1,7 +1,7 @@
 
 import vue from'vue';
-import mybotton from'./src/t1.vue';
-console.log(mybotton)
+import yinput from'./src/input.vue';
+import './src/input.scss';
 
 
 window.ve = new vue({
@@ -9,13 +9,12 @@ window.ve = new vue({
   //template: '<App/>',
   data:function(){
     return {
-       value1:"hchchc",
-       radio: '1',
-       showApp:false
+       value1:"",
+       placeholder:'请输入文字'
     }
   },
   components: { 
-    'mybotton':mybotton
+    'y-input':yinput
    },
   mounted:function(){
     this.showApp = true;

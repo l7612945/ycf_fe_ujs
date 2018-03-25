@@ -16,19 +16,13 @@ let config = {
         // extensions: ['.js', '.vue', '.json']
     },
    externals: {
-        vue: {
-            root: 'Vue',
-            commonjs: 'vue',
-            commonjs2: 'vue',
-            amd: 'vue'
-        }
+        vue: "Vue"
     },
     module: {
         rules: [{
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: "css-loader"
+                    use: ["style-loader","css-loader"]
                 })
             },
             {
@@ -40,9 +34,19 @@ let config = {
             {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
-                    use: ['css-loader', 'sass-loader', {
-                        loader: 'sass-resources-loader'
-                    }]
+                    fallback: "style-loader",
+                    use: [
+                    'css-loader'
+                    ,
+                    'sass-loader',
+                     {
+                        loader: 'sass-resources-loader',
+                        options: {
+                            // Provide path to the file with resources
+                            resources: './src/sassCore/mixins/*.scss',
+                          },
+                    }
+                    ]
                 })
             },
             {
@@ -50,7 +54,7 @@ let config = {
                 use: [{
                     loader: 'html-loader',
                     options: {
-                        minimize: true
+                        minimize: false
                     }
                 }],
             },

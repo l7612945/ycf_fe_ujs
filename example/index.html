@@ -3,24 +3,26 @@
   <head>
   	<meta charset="UTF-8">
     <title>Getting Started</title>
-    <link rel="stylesheet" href="./mybuild/main/index.css">
+    <link rel="stylesheet" href="../mybuild/main/index.css">
   </head>
   <body>
   	<div id="app">
   		
   		{{message}}
-  		<loginbox></loginbox>
-  		<sbox></sbox>
+  		<sbox :value1="value1" :value2="value2" :placeholder="placeholder"></sbox>
   	</div>
   	<script src="https://unpkg.com/vue@2.5.3/dist/vue.js"></script>
-    <script src="./mybuild/iview.js"></script>
+    <script src="../mybuild/iview.js"></script>
     <script>
     	console.log(iview);
     	// Vue.use(iview.default.components.loginbox);
     	var app = new Vue({
 		  el: '#app',
 		  data: {
-		    message: 'Hello Vue!'
+        value1:'输入文字001',
+        value2:'输入文字002',
+        placeholder:'请输入文字',
+		    message: '输入模块例子'
 		  },
 		  // components: { 
 		  //   'loginbox':iview.default.components.loginbox
