@@ -1,6 +1,8 @@
+//添加需要编译的模块
 import sbox from '../src/module/search/index.js';
 
 
+//配置
 const components = {
 	sbox
 };

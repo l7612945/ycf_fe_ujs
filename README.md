@@ -23,8 +23,8 @@
 
 使用说明
 1. 通过npm install 安装node_modules
-        -  建议使用最新版node
-        -  如果遇到‘ DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead’错误， 执行‘npm install extract-text-webpack-plugin@next ’
+    建议使用最新版node
+    如果遇到‘ DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead’错误， 执行‘npm install extract-text-webpack-plugin@next ’更新插件
 2. 开发模式下，执行'npm run server'开启服务
 3. 执行'npm run build' 生成外部项目用的js和css。文件生成在mybuild目录
 4. 执行'npm run build'前，需要先在example/buildindex.js中填写配置，添加需要编译的module组件
