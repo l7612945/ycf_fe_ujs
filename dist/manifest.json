@@ -2,15 +2,16 @@
   "vendor.js": "../vendor/index.js",
   "vendor.css": "../vendor/index.css",
   "vendor.js.map": "../vendor/index.js.map",
-  "vendor.css.map": "../vendor/index.css.map",
   "widgets/row.js": "../widgets/row/index.js",
   "widgets/row.js.map": "../widgets/row/index.js.map",
   "widgets/input.js": "../widgets/input/index.js",
   "widgets/input.js.map": "../widgets/input/index.js.map",
   "widgets/col.js": "../widgets/col/index.js",
   "widgets/col.js.map": "../widgets/col/index.js.map",
+  "module/search2.js": "../module/search2/index.js",
+  "module/search2.css": "../module/search2/index.css",
+  "module/search2.js.map": "../module/search2/index.js.map",
   "module/search.js": "../module/search/index.js",
   "module/search.css": "../module/search/index.css",
-  "module/search.js.map": "../module/search/index.js.map",
-  "module/search.css.map": "../module/search/index.css.map"
+  "module/search.js.map": "../module/search/index.js.map"
 }

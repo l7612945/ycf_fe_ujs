@@ -1,7 +1,9 @@
 <template>
   <div class="y-input" 
     :class="[
-      inputSize ? 'y-input--' + inputSize : ''
+      inputSize ? 'y-input--' + inputSize : '',
+      csstype==='rem' ? 'is-rem': '',
+      csstype==='rem'&&inputSize ? 'is-rem--' + inputSize : ''
     ]">
     <template>
       <input 
@@ -31,6 +33,10 @@
       };
     },
     props: {
+      csstype:{
+        type:  [String],
+        default: 'px'
+      },
       value: {
         type:  [String, Number],
         default: ''

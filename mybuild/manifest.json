@@ -1,6 +1,5 @@
 {
   "main.js": "./mybuildiview.js",
   "main.css": "./mybuildmain/index.css",
-  "main.js.map": "./mybuildiview.js.map",
-  "main.css.map": "./mybuildmain/index.css.map"
+  "main.js.map": "./mybuildiview.js.map"
 }

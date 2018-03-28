@@ -1,52 +1,133 @@
- @include b(input) {
+$inputwidth: 180;
+$fontsize: 14;
+$height:40;
+$mheight:24;
+$sheight:32;
+$lheight:48;
+
+
+@include b(input) {
     position: relative;
-    font-size: 14px;
     display: inline-block;
-    width: 180px;
+    font-size: $fontsize+px;
+    width: $inputwidth+px;
     @include e(inner) {
-	    background-color: #fff;
-	    background-image: none;
-	    border-radius: 4px;
-	    border: 1px solid #dcdfe6;
-	    box-sizing: border-box;
-	    color: #606266;
-	    display: inline-block;
-	    font-size: inherit;
-	    height: 40px;
-	    line-height: 40px;
-	    outline: none;
-	    padding: 0 15px;
-	    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
-	    width: 100%;
-	    &:focus{
-	    	border: 1px solid #18a6fc;
-	    }
-	    @include when (error){
-			border: 1px solid #f00;
-  	 	}
-	}
-	@include m(mini) {
-	    height: 24px;
-    	line-height: 24px;
-    	 @include e(inner) {
-    	 	height: 24px;
-    		line-height: 24px;
-    	 }
-	}
-	@include m(small) {
-	    height: 32px;
-    	line-height: 32px;
-    	 @include e(inner) {
-    	 	height: 32px;
-    		line-height: 32px;
-    	 }
-	}
-	@include m(large) {
-	    height: 48px;
-    	line-height: 48px;
-    	 @include e(inner) {
-    	 	height: 48px;
-    		line-height: 48px;
-    	 }
-	}
+        background-color: #fff;
+        background-image: none;
+        border-radius: 4px;
+        border: 1px solid #dcdfe6;
+        box-sizing: border-box;
+        color: #606266;
+        display: inline-block;
+        font-size: inherit;
+        height: $height+px;
+        line-height: $height+px;
+        outline: none;
+        padding: 0 15px;
+        transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+        width: 100%;
+        &:focus {
+            border: 1px solid #18a6fc;
+        }
+        @include when (error) {
+            border: 1px solid #f00;
+        }
+    }
+    @include m(mini) {
+        height: $mheight+px;
+        line-height: $mheight+px;
+        @include e(inner) {
+            height: $mheight+px;
+            line-height: $mheight+px;
+        }
+    }
+    @include m(small) {
+        height: $sheight+px;
+        line-height: $sheight+px;
+        @include e(inner) {
+            height: $sheight+px;
+            line-height: $sheight+px;
+        }
+    }
+    @include m(large) {
+        height: $height+px;
+        line-height: $lheight+px;
+        @include e(inner) {
+            height: $lheight+px;
+            line-height: $lheight+px;
+        }
+    }
+
+    //rem
+    @include when (rem) {
+        width: torem($inputwidth*2);
+        font-size: torem($fontsize*2);
+        @include e(inner) {
+        		 height: torem($height*2);
+             	 line-height: torem($height*2);
+
+        }
+        @include m (small) {
+            height: torem($sheight*2);
+            line-height: torem($sheight*2);
+            @include e(inner) {
+                 height: torem($sheight*2);
+                 line-height: torem($sheight*2);
+            }
+        }
+        @include m(small) {
+            height: torem($sheight*2);
+            line-height: torem($sheight*2);
+            @include e(inner) {
+                height: torem($sheight*2);
+                line-height: torem($sheight*2);
+            }
+        }
+        @include m(large) {
+            height: torem($lheight*2);
+            line-height: torem($lheight*2);
+            @include e(inner) {
+                height: torem($lheight);
+                line-height: torem($lheight*2);
+            }
+        }
+    }
 }
+
+// .y-input.is-rem.y-input--small{
+// 	 height: torem($height);
+//              line-height: torem($height);
+// }
+// @include b(inputrem) {
+// 	//rem
+//     width: torem($inputwidth);
+//         font-size: torem($fontsize);
+//         @include e(inner) {
+//             height: torem($height);
+//             line-height: torem($height);
+//         }
+//         @include m(mini) {
+//             height: torem($mheight);
+//             line-height: torem($mheight);
+//             @include e(inner) {
+//                 height: torem($mheight);
+//                 line-height: torem($mheight);
+//             }
+//         }
+//         @include m(small) {
+//             height: torem($sheight);
+//             line-height: torem($sheight);
+//             @include e(inner) {
+//                 height: torem($sheight);
+//                 line-height: torem($sheight);
+//             }
+//         }
+//         @include m(large) {
+//             height: torem($lheight);
+//             line-height: torem($lheight);
+//             @include e(inner) {
+//                 height: torem($lheight);
+//                 line-height: torem($lheight);
+//             }
+//         }
+// }

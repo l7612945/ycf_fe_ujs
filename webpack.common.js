@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); //生成html文件
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 
 let config = {
@@ -10,9 +11,9 @@ let config = {
     },
     output: {},
     resolve: {
-        // alias: {
-        //    Vue: 'vue/dist/vue.min.js',
-        // },
+        alias: {
+          
+        }
         // extensions: ['.js', '.vue', '.json']
     },
    externals: {
@@ -43,7 +44,7 @@ let config = {
                         loader: 'sass-resources-loader',
                         options: {
                             // Provide path to the file with resources
-                            resources: './src/sassCore/mixins/*.scss',
+                            resources: ['./src/sassCore/mixins/mixins.scss','./src/sassCore/common/global.scss']
                           },
                     }
                     ]
@@ -81,7 +82,13 @@ let config = {
         // new HtmlWebpackPlugin({
         //     title: 'Output Management'
         // }),
-        new ExtractTextPlugin('[name]/index.css')
+        new ExtractTextPlugin('[name]/index.css'),
+        new OptimizeCssAssetsPlugin({
+          assetNameRegExp:  /\.css$/g,
+          cssProcessor: require('cssnano'),
+          cssProcessorOptions: { discardComments: { removeAll: true } },
+          canPrint: true
+        })
     ]
 };
 

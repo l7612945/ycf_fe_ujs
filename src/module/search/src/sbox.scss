@@ -1,0 +1,19 @@
+ .inputbox{
+  width: torem(700);
+  border: 1px solid #ccc;
+  margin: torem(20) auto;
+  padding: torem(10);
+  color: #999;
+  .inputbox_p1{
+    margin-bottom: torem(10);
+    line-height:torem(80);
+  }
+  .inputbox_p3{
+    margin-bottom: torem(10);
+    line-height:torem(98);
+  }
+  .inputbox_p2{
+    line-height: torem(64);
+    margin-bottom: torem(10);
+  }
+ }
