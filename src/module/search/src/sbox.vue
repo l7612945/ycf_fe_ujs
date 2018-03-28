@@ -1,15 +1,16 @@
 <template>
   <div class="inputbox"> 
-    <div class="box1">
-      <span>输入框:</span><yinput :value="value1" :placeholder="placeholder"></yinput>
-    </div>
-    <br>
-    <div class="box1">
-     <span>输入框2:</span><yinput :value="value2" :placeholder="placeholder" size='small'></yinput>
-    </div>
+    <yrow align="center" class="inputbox_p1">
+      <ycol :span="4"> <span>输入框:</span></ycol>
+      <ycol :span="20">
+        <yinput :value="myvalue1" :status="status" :placeholder="placeholder" @blur="blur"></yinput>
+      </ycol>
+    </yrow>
+    <yrow align="center"  class="inputbox_p2">
+       <ycol :span="4"> <span>输入框2:</span></ycol>
+      <ycol :span="20"><yinput :value="myvalue2" :placeholder="placeholder" size='small'></yinput></ycol>
+    </yrow>
   </div>
- 
-
 </template>
 <style lang="scss">
  .inputbox{
@@ -18,28 +19,42 @@
   margin: 20px auto;
   padding: 20px;
   color: #999;
-  span{
-    display: inline-block;
-    width: 70px;
+  .inputbox_p1{
+    margin-bottom: 10px;
+    line-height:40px;
+  }
+  .inputbox_p2{
+    line-height: 32px;
   }
  }
 </style>
 <script>
   import yinput from '../../../widgets/input/src/input.vue'; 
+  import ycol from '../../../widgets/col/src/col.js'; 
+  import yrow from '../../../widgets/row/src/row.js'; 
   export default {
     name: 'y-input',
     data:function(){
       return {
-         
+         myvalue1:this.value1||'',
+         myvalue2:this.value2||'',
+         status:''
       }
     },
     components: {
-      'yinput':yinput
+      'yinput':yinput,
+      'ycol':ycol,
+      'yrow':yrow
     },
     methods: {
-      // handleClick(evt) {
-      //   this.$emit('click', evt);
-      // }
+      blur(val) {
+        this.myvalue1 = val;
+        if(val.length==0){
+          this.status = "error"
+        }else{
+          this.status = ""
+        }
+      }
     },
     props: {
       value1: [String, Number],

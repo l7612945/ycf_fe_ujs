@@ -43,3 +43,19 @@
 
   @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
 }
+
+/* rem support Func
+ -------------------------- */
+@function pxTorem($px){//$px为需要转换的字号
+// @return $px / $browser-default-font-size * 1rem; 
+}
+
+
+
+
+
+
+
+
+
+

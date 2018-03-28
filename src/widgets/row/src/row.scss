@@ -1,0 +1,39 @@
+ @include b(row) {
+ 	display: -webkit-flex; /* Safari */
+  	display: flex;
+    flex-wrap: nowrap ;
+  	@include when (justify){
+  		@include when (start){
+			justify-content:flex-start ;
+  	 	}
+		@include when (end){
+			justify-content:flex-end ;
+  	 	}
+  	 	@include when (center){
+			justify-content:center ;
+  	 	}
+  	 	@include when (between){
+			justify-content:space-between ;
+  	 	}
+  	 	@include when (around){
+			justify-content:space-around;
+  	 	}
+  	 }
+  	 @include when (align){
+  	 	@include when (start){
+			align-items:flex-start ;
+  	 	}
+		@include when (end){
+			align-items:flex-end ;
+  	 	}
+  	 	@include when (center){
+			align-items:center ;
+  	 	}
+  	 	@include when (baseline){
+			align-items:baseline ;
+  	 	}
+  	 	@include when (stretch){
+			align-items:stretch;
+  	 	}
+  	 }
+ }

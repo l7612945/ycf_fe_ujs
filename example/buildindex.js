@@ -2,6 +2,7 @@
 import sbox from '../src/module/search/index.js';
 
 
+
 //配置
 const components = {
 	sbox

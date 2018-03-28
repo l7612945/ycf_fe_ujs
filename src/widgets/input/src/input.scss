@@ -1,5 +1,4 @@
- 
-@include b(input) {
+ @include b(input) {
     position: relative;
     font-size: 14px;
     display: inline-block;
@@ -22,6 +21,9 @@
 	    &:focus{
 	    	border: 1px solid #18a6fc;
 	    }
+	    @include when (error){
+			border: 1px solid #f00;
+  	 	}
 	}
 	@include m(mini) {
 	    height: 24px;

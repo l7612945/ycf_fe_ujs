@@ -8,8 +8,9 @@
         type="text"
         class="y-input__inner"
         v-bind="$props"
-        :value="currentValue"
+        v-model:value="currentValue"
         @blur="handleBlur"
+        v-bind:class='{"is-error":status=="error"}'
       >
     </template>
   </div>
@@ -19,7 +20,7 @@
 <script>
   import './input.scss';
   export default {
-    name: 'yinput',
+    name: 'y-input',
     data() {
       return {
         currentValue: this.value,
@@ -33,6 +34,10 @@
       value: {
         type:  [String, Number],
         default: ''
+      },
+      status: {
+        type:  [String],
+        default: 'primary'
       },
       placeholder: String,
       size: String,
@@ -67,7 +72,7 @@
     methods: {
       handleBlur(event) {
         this.focused = false;
-        this.$emit('blur', event);
+        this.$emit('blur', this.currentValue);
       }
     }
   };

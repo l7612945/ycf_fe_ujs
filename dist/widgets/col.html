@@ -3,18 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <title>_widgets/input</title>
+    <title>_widgets/col</title>
 	<link href="../../../favicon.png" rel="icon" sizes="32x32" type="image/png">
-	
   <link href="../vendor/index.css" rel="stylesheet"></head>
   <body>
       <div id="app">
-        啊
-			<div><y-input :value="value1" :placeholder="placeholder"></y-input></div><br>
-			<div><y-input :value="value1" :placeholder="placeholder" size='small'></y-input></div><br>
-			<div><y-input :value="value1" :placeholder="placeholder" size='large'></y-input></div>
+        <y-row>
+          <y-col :span='20'>
+            sssss
+          </y-col>
+          <y-col :span='3'>
+            334dasdd
+          </y-col>
+        </y-row>
+			</div>
 </div> 
   	<script src="https://unpkg.com/vue@2.5.3/dist/vue.js" type="text/javascript"></script>
 	<!-- <script src="../../widgets/input/index.js" type="text/javascript"></script> -->
-  <script type="text/javascript" src="../vendor/index.js"></script><script type="text/javascript" src="../widgets/input/index.js"></script></body>
+  <script type="text/javascript" src="../vendor/index.js"></script><script type="text/javascript" src="../widgets/col/index.js"></script></body>
 </html>

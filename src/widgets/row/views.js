@@ -1,7 +1,6 @@
 
 import vue from'vue';
-import yinput from'./src/input.vue';
-
+import row from'./src/row.js';
 
 window.ve = new vue({
   el: '#app',
@@ -13,7 +12,7 @@ window.ve = new vue({
     }
   },
   components: { 
-    'y-input':yinput
+    'y-row':row
    },
   mounted:function(){
     this.showApp = true;

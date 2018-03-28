@@ -1,99 +1,3 @@
-
-.inputbox {
-  width: 400px;
-  border: 1px solid #ccc;
-  margin: 20px auto;
-  padding: 20px;
-  color: #999;
-}
-.inputbox .inputbox_p1 {
-    margin-bottom: 10px;
-    line-height: 40px;
-}
-.inputbox .inputbox_p2 {
-    line-height: 32px;
-}
-/* BEM support Func
- -------------------------- */
-/* rem support Func
- -------------------------- */
-/* BEM support Func
- -------------------------- */
-/* rem support Func
- -------------------------- */
-/* BEM
- -------------------------- */
-.y-col--1 {
-  flex: 1; }
-
-.y-col--2 {
-  flex: 2; }
-
-.y-col--3 {
-  flex: 3; }
-
-.y-col--4 {
-  flex: 4; }
-
-.y-col--5 {
-  flex: 5; }
-
-.y-col--6 {
-  flex: 6; }
-
-.y-col--7 {
-  flex: 7; }
-
-.y-col--8 {
-  flex: 8; }
-
-.y-col--9 {
-  flex: 9; }
-
-.y-col--10 {
-  flex: 10; }
-
-.y-col--11 {
-  flex: 11; }
-
-.y-col--12 {
-  flex: 12; }
-
-.y-col--13 {
-  flex: 13; }
-
-.y-col--14 {
-  flex: 14; }
-
-.y-col--15 {
-  flex: 15; }
-
-.y-col--16 {
-  flex: 16; }
-
-.y-col--17 {
-  flex: 17; }
-
-.y-col--18 {
-  flex: 18; }
-
-.y-col--19 {
-  flex: 19; }
-
-.y-col--20 {
-  flex: 20; }
-
-.y-col--21 {
-  flex: 21; }
-
-.y-col--22 {
-  flex: 22; }
-
-.y-col--23 {
-  flex: 23; }
-
-.y-col--24 {
-  flex: 24; }
 /* BEM support Func
  -------------------------- */
 /* rem support Func
@@ -181,5 +85,86 @@
     .y-input--large .y-input__inner {
       height: 48px;
       line-height: 48px; }
+/* BEM support Func
+ -------------------------- */
+/* rem support Func
+ -------------------------- */
+/* BEM support Func
+ -------------------------- */
+/* rem support Func
+ -------------------------- */
+/* BEM
+ -------------------------- */
+.y-col--1 {
+  flex: 1; }
+
+.y-col--2 {
+  flex: 2; }
+
+.y-col--3 {
+  flex: 3; }
+
+.y-col--4 {
+  flex: 4; }
+
+.y-col--5 {
+  flex: 5; }
+
+.y-col--6 {
+  flex: 6; }
+
+.y-col--7 {
+  flex: 7; }
+
+.y-col--8 {
+  flex: 8; }
+
+.y-col--9 {
+  flex: 9; }
+
+.y-col--10 {
+  flex: 10; }
+
+.y-col--11 {
+  flex: 11; }
+
+.y-col--12 {
+  flex: 12; }
+
+.y-col--13 {
+  flex: 13; }
+
+.y-col--14 {
+  flex: 14; }
+
+.y-col--15 {
+  flex: 15; }
+
+.y-col--16 {
+  flex: 16; }
+
+.y-col--17 {
+  flex: 17; }
+
+.y-col--18 {
+  flex: 18; }
+
+.y-col--19 {
+  flex: 19; }
+
+.y-col--20 {
+  flex: 20; }
+
+.y-col--21 {
+  flex: 21; }
+
+.y-col--22 {
+  flex: 22; }
+
+.y-col--23 {
+  flex: 23; }
+
+.y-col--24 {
+  flex: 24; }
 
 /*# sourceMappingURL=index.css.map*/
