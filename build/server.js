@@ -11,6 +11,23 @@ const config = require('./webpack.dev.js');
 const compiler = webpack(config);
 
 
+const fs = require('fs');
+const myconfig = require('../config.js');
+fs.readFile('./src/sassCore/mixins/config.scss', 'utf8', function(err, data){
+ 	let _d = data;
+ 	console.log(_d.match(/\$isrem: [a-zA-Z0-9_-]*;/g))
+ 	_d = _d.replace(/\$isrem: [a-zA-Z0-9_-]*;/, "");
+ 	if(myconfig.isrem){
+ 		_d+='$isrem: true;'
+ 	}else{
+ 		_d+='$isrem: false;'
+ 	}
+   fs.writeFile('./src/sassCore/mixins/config.scss', _d,function(err){
+	    if(err) console.log('写文件操作失败');
+	    else console.log('写文件操作成功');
+	}); 
+});
+
 // Tell express to use the webpack-dev-middleware and use the webpack.config.js
 // configuration file as a base.
 app.use(webpackDevMiddleware(compiler, {

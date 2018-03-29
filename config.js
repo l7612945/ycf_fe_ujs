@@ -1,5 +1,3 @@
-var config = {
-    isrem:true
-};
-
-export default config;
+module.exports = {
+	 isrem:true
+}
