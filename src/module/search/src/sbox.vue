@@ -1,17 +1,18 @@
 <template>
   <div class="inputbox"> 
+    <div class="tbox"></div>
     <yrow align="center" class="inputbox_p1">
       <ycol :span="4"> <span>输入框:</span></ycol>
       <ycol :span="20">
-        <yinput :value="myvalue1" csstype='rem' :status="status" :placeholder="placeholder" @blur="blur"></yinput>
+        <yinput :value="myvalue1" :status="status" :placeholder="placeholder" @blur="blur" size='mini'></yinput>
       </ycol>
     </yrow>
     <yrow align="center"  class="inputbox_p2">
-       <ycol :span="4"> <span>输入框2:</span></ycol>
+       <ycol :span="4"> <span>输入框:</span></ycol>
       <ycol :span="20"><yinput :value="myvalue2"  :placeholder="placeholder" size='small'></yinput></ycol>
     </yrow>
      <yrow align="center"  class="inputbox_p3">
-       <ycol :span="4"> <span>输入框3:</span></ycol>
+       <ycol :span="4"> <span>输入框:</span></ycol>
       <ycol :span="20"><yinput :value="myvalue2" :placeholder="placeholder" size='large'></yinput></ycol>
     </yrow>
   </div>

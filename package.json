@@ -4,11 +4,9 @@
   "description": "要出发前端研究小组组件库",
   "main": "index.js",
   "scripts": {
-    "release": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --open",
-    "server": "node server.js",
-    "build": "webpack --config webpack.build.js",
-    "move": "npm run build && node build/move.js"
+    "release": "webpack --config ./build/webpack.prod.js",
+    "server": "node ./build/server.js",
+    "build": "node ./build/server_build.js && webpack --config ./build/webpack.build.js"
   },
   "author": "",
   "license": "ISC",

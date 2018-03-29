@@ -4,7 +4,6 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-
 let config = {
     entry: {
 
@@ -12,7 +11,7 @@ let config = {
     output: {},
     resolve: {
         alias: {
-          
+          // sassconfig:path.resolve(__dirname, 'src/utilities/')
         }
         // extensions: ['.js', '.vue', '.json']
     },
