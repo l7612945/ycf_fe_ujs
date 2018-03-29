@@ -1,0 +1,24 @@
+ .inputbox{
+  width: unit(600);
+  background: #fff;
+  box-shadow: 0 0 3px #ccc;
+  margin: unit(20) auto;
+  padding: unit(20);
+  color: #999;
+  font-size:  unit(14);
+  border-radius: unit(10);
+  .inputbox_p1{
+    margin-bottom: unit(20);
+    line-height:unit(48);
+  }
+  .inputbox_p3{
+    line-height:unit(96);
+    .y-input {
+          width: 100%;
+    }
+  }
+  .inputbox_p2{
+    line-height: unit(64);
+    margin-bottom: unit(20);
+  }
+ }

@@ -1,3 +1,33 @@
-.is-active {
-    background: yellow;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Microsoft YaHei', 'Courier New', monospace;
+    font-size: 14px;
+    // width: 100%;
+    height: auto;
+    position: relative;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        color: #fff;
+    }
 }

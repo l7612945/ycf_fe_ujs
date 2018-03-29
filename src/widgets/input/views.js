@@ -1,7 +1,6 @@
 
 import vue from'vue';
 import yinput from'./src/input.vue';
-import './src/input.scss';
 
 
 window.ve = new vue({
