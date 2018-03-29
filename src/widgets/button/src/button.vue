@@ -1,5 +1,5 @@
 <template>
-  <button :class="{'y-button': true,'is-disabled':disabled}" >
+  <button :class="{'y-button': true,'is-disabled':disabled,'y-button--pill':pill}" >
       <slot></slot>
   </button>
 </template>

@@ -1,38 +1,48 @@
 $height: 40;
 $width: 120;
 
-$bgColor: #fff;
-$primary-bgColor: #139ae8;
+$bg-color: #fff;
+$primary-bg-color: #139ae8;
 
-$borderColor: #ddd;
-$borderRaidus: 4;
+$border-color: #ddd;
+$border-width: 1;
+$border-raidus: 4;
+
+$hover-color: #ff9000;
+
+$focus-bg-color: #148ae2;
 
 // 垂直居中
 @mixin verticalCenter($h) {
     height: unit($h);
-    line-height: unit($h);
+    line-height: unit($h - 4);
 }
 
 
 @include b(button) {
     outline: none;
-    border: $borderColor solid 1px;
-    border-radius: unit($borderRaidus);
+    box-sizing: border-box; 
+    border: $border-color solid 1px;
+    border-radius: unit($border-raidus);
     width: unit($width);
-    background-color: $bgColor;
+    background-color: $bg-color;
     @include verticalCenter($height);
 
     @include pseudo(hover){
-        background-color: #000;
+        border-color: $hover-color;
     }
 
     @include pseudo(focus){
-        background-color: red;
+        background-color: $focus-bg-color;
     }
 
     @include when(disabled){
         background-color: #ccc;
         color: #ddd;
         cursor: not-allowed;
+    }
+
+    @include m(pill){
+        border-radius: unit($height/2);
     }
 }
