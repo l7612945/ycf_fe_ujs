@@ -1,0 +1,38 @@
+$height: 40;
+$width: 120;
+
+$bgColor: #fff;
+$primary-bgColor: #139ae8;
+
+$borderColor: #ddd;
+$borderRaidus: 4;
+
+// 垂直居中
+@mixin verticalCenter($h) {
+    height: unit($h);
+    line-height: unit($h);
+}
+
+
+@include b(button) {
+    outline: none;
+    border: $borderColor solid 1px;
+    border-radius: unit($borderRaidus);
+    width: unit($width);
+    background-color: $bgColor;
+    @include verticalCenter($height);
+
+    @include pseudo(hover){
+        background-color: #000;
+    }
+
+    @include pseudo(focus){
+        background-color: red;
+    }
+
+    @include when(disabled){
+        background-color: #ccc;
+        color: #ddd;
+        cursor: not-allowed;
+    }
+}
