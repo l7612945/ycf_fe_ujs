@@ -1,16 +1,57 @@
-$height: 40;
-$width: 120;
+// 变量的命名为 ${type/size-}{伪类-}attr-name;
+// 没带type/size的变量为type=default/size=medium的样式
+// 不在y-button--default/y-button--medium定义的原因是
+// 有时用户传入的type/size并不是我们提供的type/size取值范围中
+// 这样的话按钮就无法显示正常样式
 
-$bg-color: #fff;
-$primary-bg-color: #139ae8;
-
-$border-color: #ddd;
 $border-width: 1;
 $border-raidus: 4;
 
-$hover-color: #ff9000;
+$width: 200;
+$height: 60;
+$font-size: 40;
 
-$focus-bg-color: #148ae2;
+$small-width: 140;
+$small-height: 48;
+$small-font-size: 32;
+
+$large-width: 280;
+$large-height: 80;
+$large-font-size: 48;
+
+$mini-width: 80;
+$mini-height: 32;
+$mini-font-size: 24;
+
+$font-color: #666;
+$primary-font-color:#fff;
+$success-font-color:#fff;
+$danger-font-color:#fff;
+
+$bg-color: #fff;
+$primary-bg-color: #139ae8;
+$success-bg-color: #63c831;
+$danger-bg-color: #ff2c27;
+
+$border-color: #ccc;
+$primary-border-color: $primary-bg-color;
+$success-border-color: $success-bg-color;
+$danger-border-color: $danger-bg-color;
+
+$focus-border-color: #ff9000;
+$primary-focus-border-color: #ff9000;
+$success-focus-border-color: #ff9000;
+$danger-focus-border-color: #ff9000;
+
+$disabled-color: #eee;
+$primary-disabled-color: #eee;
+$success-disabled-color: #eee;
+$danger-disabled-color: #eee;
+
+$disabled-bg-color: #ccc;
+$primary-disabled-bg-color: #ccc;
+$success-disabled-bg-color: #ccc;
+$danger-disabled-bg-color: #ccc;
 
 // 垂直居中
 @mixin verticalCenter($h) {
@@ -22,6 +63,7 @@ $focus-bg-color: #148ae2;
 @include b(button) {
     outline: none;
     box-sizing: border-box; 
+    color: $font-color;
     border: $border-color solid 1px;
     border-radius: unit($border-raidus);
     width: unit($width);
@@ -29,20 +71,49 @@ $focus-bg-color: #148ae2;
     @include verticalCenter($height);
 
     @include pseudo(hover){
-        border-color: $hover-color;
+        background-color: $font-color;
+        color: $bg-color;
     }
 
     @include pseudo(focus){
-        background-color: $focus-bg-color;
+        border-color: $focus-border-color;
     }
 
     @include when(disabled){
-        background-color: #ccc;
-        color: #ddd;
+        background-color: $disabled-color;
+        color: $disabled-bg-color;
         cursor: not-allowed;
     }
 
     @include m(pill){
         border-radius: unit($height/2);
+    }
+    // type
+    @include m(primary) {
+        color: $primary-font-color;
+        border-color: $primary-border-color;
+        background-color: $primary-bg-color;
+
+        @include pseudo(focus) {
+            background-color: $primary-focus-border-color;
+        }
+
+        @include pseudo(hover) {
+            color: $primary-bg-color;
+            background-color: $primary-font-color;
+        }
+
+        @include when(disabled){
+            background-color: $disabled-color;
+            color: $disabled-bg-color;
+            cursor: not-allowed;
+        }
+    }
+
+    // size
+    @include m(large){
+        width: unit($large-width);
+        @include verticalCenter($large-height);
+        font-size: $large-font-size;
     }
 }
