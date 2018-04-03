@@ -8,6 +8,10 @@
     }
   ]" 
     :type="nativeType"
+    :autofocus="autofocus"
+    @focus="handleFocus" 
+    @click="handleClick"
+    @blur="handleBlur"
   >
       <slot></slot>
   </button>
@@ -36,10 +40,22 @@ export default {
     nativeType: {
       type: String,
       defalut: "button"
+    },
+    autofocus: {
+      type: String,
+      default: "false"
     }
   },
-  mounted() {
-    console.log(this.disabled);
+  methods: {
+    handleClick(e) {
+      this.$emit("click", e);
+    },
+    handleFocus(e) {
+      this.$emit("focus", e);
+    },
+    handleBlur(e) {
+      this.$emit("blur", e);
+    }
   }
 };
 </script>

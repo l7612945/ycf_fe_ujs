@@ -17,5 +17,15 @@ window.ve = new vue({
    },
   mounted:function(){
     this.showApp = true;
+    console.log('mounted');
+  },
+  methods: {
+    hclick(){
+      console.log('parent click');
+      console.log(arguments);
+    },
+    handleFocus(){
+      console.log('focus');
+    }
   }
 })
