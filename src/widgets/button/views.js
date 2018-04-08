@@ -20,12 +20,14 @@ window.ve = new vue({
     console.log('mounted');
   },
   methods: {
-    hclick(){
-      console.log('parent click');
-      console.log(arguments);
+    handleClick(){
+      console.log('click');
     },
     handleFocus(){
       console.log('focus');
+    },
+    handleBlur(){
+      console.log('blur');
     }
   }
 })

@@ -38,20 +38,20 @@ $primary-border-color: $primary-bg-color;
 $success-border-color: $success-bg-color;
 $danger-border-color: $danger-bg-color;
 
-$focus-border-color: #ff9000;
-$primary-focus-border-color: #ff9000;
-$success-focus-border-color: #ff9000;
+$focus-border-color: #363636;
+$primary-focus-border-color: #2600ff;
+$success-focus-border-color: #3c8d13;
 $danger-focus-border-color: #ff9000;
 
 $disabled-color: #eee;
-$primary-disabled-color: #eee;
-$success-disabled-color: #eee;
+$primary-disabled-color: #fff;
+$success-disabled-color: #fff;
 $danger-disabled-color: #eee;
 
 $disabled-bg-color: #ccc;
-$primary-disabled-bg-color: #ccc;
-$success-disabled-bg-color: #ccc;
-$danger-disabled-bg-color: #ccc;
+$primary-disabled-bg-color: #3ecfff;
+$success-disabled-bg-color: #7af53c;
+$danger-disabled-bg-color: #ff4a47;
 
 // 垂直居中
 @mixin verticalCenter($h) {
@@ -82,11 +82,12 @@ $danger-disabled-bg-color: #ccc;
     @include when(disabled){
         background-color: $disabled-color;
         color: $disabled-bg-color;
+        border-color: $border-color;
         cursor: not-allowed;
     }
 
-    @include m(pill){
-        border-radius: unit($height/2);
+    @include when(pill){
+        border-radius: unit($large-height);
     }
     // type
     @include m(primary) {
@@ -95,7 +96,7 @@ $danger-disabled-bg-color: #ccc;
         background-color: $primary-bg-color;
 
         @include pseudo(focus) {
-            background-color: $primary-focus-border-color;
+            border-color: $primary-focus-border-color;
         }
 
         @include pseudo(hover) {
@@ -104,8 +105,31 @@ $danger-disabled-bg-color: #ccc;
         }
 
         @include when(disabled){
-            background-color: $disabled-color;
-            color: $disabled-bg-color;
+            background-color: $primary-disabled-bg-color;
+            color: $primary-disabled-color;
+            border-color: $primary-disabled-bg-color;
+            cursor: not-allowed;
+        }
+    }
+
+    @include m(success) {
+        color: $success-font-color;
+        border-color: $success-border-color;
+        background-color: $success-bg-color;
+
+        @include pseudo(focus) {
+            border-color: $success-focus-border-color;
+        }
+
+        @include pseudo(hover) {
+            color: $success-bg-color;
+            background-color: $success-font-color;
+        }
+
+        @include when(disabled){
+            background-color: $success-disabled-bg-color;
+            color: $success-disabled-color;
+            border-color: $success-disabled-bg-color;
             cursor: not-allowed;
         }
     }
