@@ -1,5 +1,18 @@
 <template>
-  <button :class="{'y-button': true,'is-disabled':disabled}" >
+  <button :class="[
+    'y-button',
+    `y-button--${type} y-button--${size}`,
+    {
+      'is-pill':pill,
+      'is-disabled': disabled
+    }
+  ]" 
+    :type="nativeType"
+    :autofocus="autofocus"
+    @focus="handleFocus" 
+    @click="handleClick"
+    @blur="handleBlur"
+  >
       <slot></slot>
   </button>
 </template>
@@ -12,15 +25,37 @@ export default {
     return {};
   },
   props: {
-    type: String,
-    size: String,
+    type: {
+      type: String,
+      default: "defalut"
+    },
+    size: {
+      type: String,
+      default: "medium"
+    },
     pill: Boolean,
     disabled: {
       type: Boolean
+    },
+    nativeType: {
+      type: String,
+      defalut: "button"
+    },
+    autofocus: {
+      type: String,
+      default: "false"
     }
   },
-  mounted() {
-    console.log(this.disabled);
+  methods: {
+    handleClick(e) {
+      this.$emit("click", e);
+    },
+    handleFocus(e) {
+      this.$emit("focus", e);
+    },
+    handleBlur(e) {
+      this.$emit("blur", e);
+    }
   }
 };
 </script>

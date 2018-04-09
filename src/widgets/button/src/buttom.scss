@@ -1,38 +1,155 @@
-$height: 40;
-$width: 120;
+// 变量的命名为 ${type/size-}{伪类-}attr-name;
+// 没带type/size的变量为type=default/size=medium的样式
+// 不在y-button--default/y-button--medium定义的原因是
+// 有时用户传入的type/size并不是我们提供的type/size取值范围中
+// 这样的话按钮就无法显示正常样式
 
-$bgColor: #fff;
-$primary-bgColor: #139ae8;
+$border-width: 1;
+$border-raidus: 8;
 
-$borderColor: #ddd;
-$borderRaidus: 4;
+$width: 200;
+$height: 60;
+$font-size: 40;
+
+$small-width: 160;
+$small-height: 52;
+$small-font-size: 32;
+
+$large-width: 280;
+$large-height: 80;
+$large-font-size: 48;
+
+$mini-width: 120;
+$mini-height: 44;
+$mini-font-size: 24;
+
+$font-color: #666;
+$primary-font-color:#fff;
+$success-font-color:#fff;
+$danger-font-color:#fff;
+
+$bg-color: #fff;
+$primary-bg-color: #139ae8;
+$success-bg-color: #63c831;
+$danger-bg-color: #ff2c27;
+
+$border-color: #ccc;
+$primary-border-color: $primary-bg-color;
+$success-border-color: $success-bg-color;
+$danger-border-color: $danger-bg-color;
+
+$focus-border-color: #363636;
+$primary-focus-border-color: #2600ff;
+$success-focus-border-color: #3c8d13;
+$danger-focus-border-color: #ff9000;
+
+$disabled-color: #eee;
+$primary-disabled-color: #fff;
+$success-disabled-color: #fff;
+$danger-disabled-color: #eee;
+
+$disabled-bg-color: #ccc;
+$primary-disabled-bg-color: #3ecfff;
+$success-disabled-bg-color: #7af53c;
+$danger-disabled-bg-color: #ff4a47;
 
 // 垂直居中
 @mixin verticalCenter($h) {
     height: unit($h);
-    line-height: unit($h);
+    line-height: unit($h - 4);
 }
 
 
 @include b(button) {
     outline: none;
-    border: $borderColor solid 1px;
-    border-radius: unit($borderRaidus);
+    box-sizing: border-box; 
+    color: $font-color;
+    border: $border-color solid 1px;
+    border-radius: unit($border-raidus);
     width: unit($width);
-    background-color: $bgColor;
+    background-color: $bg-color;
     @include verticalCenter($height);
 
     @include pseudo(hover){
-        background-color: #000;
+        background-color: $font-color;
+        color: $bg-color;
     }
 
     @include pseudo(focus){
-        background-color: red;
+        border-color: $focus-border-color;
     }
 
     @include when(disabled){
-        background-color: #ccc;
-        color: #ddd;
+        background-color: $disabled-color;
+        color: $disabled-bg-color;
+        border-color: $border-color;
         cursor: not-allowed;
+    }
+
+    @include when(pill){
+        border-radius: unit($large-height);
+    }
+    // type
+    @include m(primary) {
+        color: $primary-font-color;
+        border-color: $primary-border-color;
+        background-color: $primary-bg-color;
+
+        @include pseudo(focus) {
+            border-color: $primary-focus-border-color;
+        }
+
+        @include pseudo(hover) {
+            color: $primary-bg-color;
+            background-color: $primary-font-color;
+        }
+
+        @include when(disabled){
+            background-color: $primary-disabled-bg-color;
+            color: $primary-disabled-color;
+            border-color: $primary-disabled-bg-color;
+            cursor: not-allowed;
+        }
+    }
+
+    @include m(success) {
+        color: $success-font-color;
+        border-color: $success-border-color;
+        background-color: $success-bg-color;
+
+        @include pseudo(focus) {
+            border-color: $success-focus-border-color;
+        }
+
+        @include pseudo(hover) {
+            color: $success-bg-color;
+            background-color: $success-font-color;
+        }
+
+        @include when(disabled){
+            background-color: $success-disabled-bg-color;
+            color: $success-disabled-color;
+            border-color: $success-disabled-bg-color;
+            cursor: not-allowed;
+        }
+    }
+
+    // size
+    @include m(large){
+        width: unit($large-width);
+        @include verticalCenter($large-height);
+        font-size: $large-font-size;
+    }
+
+    @include m(small){
+        width: unit($small-width);
+        @include verticalCenter($small-height);
+        font-size: $small-font-size;
+    }
+
+    @include m(mini){
+        width: unit($mini-width);
+        @include verticalCenter($mini-height);
+        font-size: $mini-font-size;
     }
 }
