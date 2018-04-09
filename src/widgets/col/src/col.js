@@ -16,11 +16,13 @@ export default {
             default: 24
         },
         offset: Number,
+        right: Number,
+        left: Number,
     },
     computed: {
         gutter() {
             let parent = this.$parent;
-            while (parent && parent.$options.componentName !== 'ElRow') {
+            while (parent && parent.$options.componentName !== 'y-row') {
                 parent = parent.$parent;
             }
             return parent ? parent.gutter : 0;
@@ -35,7 +37,7 @@ export default {
             style.paddingRight = style.paddingLeft;
         }
 
-        ['span', 'offset'].forEach(prop => {
+        ['span', 'offset','left', 'right'].forEach(prop => {
             if (this[prop] || this[prop] === 0) {
                 classList.push(
                     prop !== 'span' ?
