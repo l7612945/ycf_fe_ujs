@@ -57,4 +57,19 @@ $lheight:96;
             line-height:unit($lheight);
         }
     }
+
+    @include e(suffix) {
+        position: absolute;
+        height: 100%;
+        top: unit(0);
+        text-align: center;
+        right: unit(5);
+        transition: all .3s;
+        pointer-events: none;
+
+    }
+
+    @include e(suffix-inner){
+        pointer-events: all;
+    }
 }

@@ -10,8 +10,18 @@
         v-bind="$props"
         v-model:value="currentValue"
         @blur="handleBlur"
+        :disabled="disabled"
+        @focus="handleFocus"
         v-bind:class='{"is-error":status=="error"}'
       >
+      <span v-if="showClear" class="y-input__suffix">
+        <span class="y-input__suffix-inner">
+            <i class="iconfont el-input__icon" @click="clear">&#xe644;</i>
+        </span>
+      </span>
+    </template>
+    <template>
+      <textarea></textarea>
     </template>
   </div>
 </template>
@@ -19,6 +29,7 @@
 </style>
 <script>
   import './input.scss';
+  import '../../../font/iconfont.css'
   export default {
     name: 'y-input',
     data() {
@@ -62,18 +73,31 @@
       }
     },
     computed: {
-      inputSize() {
-        return this.size;
-      }
+        inputSize() {
+          return this.size;
+        },
+        showClear(){
+            return this.clearable && !this.disabled && this.currentValue !== '' && (this.focused || this.hovering);
+        }
     },
     mounted() {
      
     },
     methods: {
-      handleBlur(event) {
-        this.focused = false;
-        this.$emit('blur', this.currentValue);
-      }
+        handleBlur(event) {
+          this.focused = false;
+          this.$emit('blur', this.currentValue);
+        },
+        handleFocus(event) {
+            this.focused = true;
+            this.$emit('focus', event);
+        },
+        clear(){
+            this.$emit('input', '');
+            this.$emit('change', '');
+            this.$emit('clear');
+            this.currentValue = '';
+        }
     }
   };
 </script>
