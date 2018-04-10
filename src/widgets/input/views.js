@@ -1,6 +1,7 @@
 
 import vue from'vue';
 import yinput from'./src/input.vue';
+import remfun from '../../commonjs/config.js';
 
 
 window.ve = new vue({

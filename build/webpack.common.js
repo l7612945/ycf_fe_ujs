@@ -23,7 +23,11 @@ let config = {
         rules: [{
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
-                    use: ["style-loader","css-loader"]
+                    fallback: 'style-loader',
+                    use: { loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                        } },
                 })
             },
             {
