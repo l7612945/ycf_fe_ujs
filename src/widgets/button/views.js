@@ -1,6 +1,8 @@
 
 import vue from'vue';
 import yButton from'./src/button.vue';
+import config from '../../commonjs/config.js';
+
 
 
 window.ve = new vue({
