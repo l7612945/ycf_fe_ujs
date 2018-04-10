@@ -1,6 +1,6 @@
 import './row.scss';
 export default {
-    name: 'yrow',
+    name: 'y-row',
     data() {
         return {
 
@@ -11,6 +11,7 @@ export default {
           type: String,
           default: 'div'
         },
+        type: String,
         gutter: Number,
         justify: {
             type: String,
@@ -19,7 +20,7 @@ export default {
         align: {
             type: String,
             default: 'start'
-        }
+        },
     },
     computed: {
         style() {
