@@ -16,11 +16,6 @@
           "is-disabled": disabled
         }]'
       >
-      <!-- <span v-if="showClear" class="y-input__prefix">
-        <span class="y-input__prefix-inner">
-            <i class="iconfont icon-qingkong" @click="clear"></i>
-        </span>
-      </span> -->
       <span v-if="showClear" class="y-input__suffix">
         <span class="y-input__suffix-inner">
             <i class="iconfont icon-qingkong" @click="clear"></i>
@@ -83,7 +78,7 @@
           return this.size;
         },
         showClear(){
-            return this.clearable && !this.disabled && this.currentValue !== '' ;
+            return this.clearable && !this.disabled && this.currentValue !== '' && (this.focused || this.hovering);
         },
         inputDisabled(){
           return this.disabled;
