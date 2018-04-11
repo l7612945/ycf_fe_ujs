@@ -17,5 +17,16 @@ window.ve = new vue({
    },
   mounted:function(){
     this.showApp = true;
+  },
+  methods: {
+    onblur(){
+      console.log('onblur');
+    },
+    onfocus(){
+      console.log('focus');
+    },
+    handleBlur(){
+      console.log('blur');
+    }
   }
 })

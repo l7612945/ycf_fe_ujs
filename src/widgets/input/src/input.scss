@@ -1,15 +1,16 @@
-$inputwidth: 360;
-$fontsize: 24;
-$height:80;
-$mheight:48;
-$sheight:64;
-$lheight:96;
+$inputwidth: 320;
+$fontsize:20;
+$height:$normal-height;
+$mheight:$mini-height;
+$sheight:$small-height;
+$lheight:$large-height;
 
 
 @include b(input) {
     position: relative;
     display: inline-block;
     font-size: unit($fontsize);
+    box-sizing: border-box;
     width: unit($inputwidth);
     @include e(inner) {
         background-color: #fff;
@@ -20,8 +21,8 @@ $lheight:96;
         color: #606266;
         display: inline-block;
         font-size: inherit;
-        height: $height+px;
-        line-height: $height+px;
+        height: unit($height);
+        line-height: unit($height);
         outline: none;
         padding: 0 unit(15);
         transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
@@ -29,8 +30,16 @@ $lheight:96;
         &:focus {
             border: 1px solid #18a6fc;
         }
+        &::-webkit-input-placeholder {
+            color: #bbb;
+        }
         @include when (error) {
             border: 1px solid #f00;
+        }
+        @include when (disabled) {
+            background-color: $disabled-bg-color;
+            color: $disabled-color;
+            cursor: not-allowed;
         }
     }
     @include m(mini) {
@@ -54,7 +63,7 @@ $lheight:96;
         line-height: unit($lheight);
         @include e(inner) {
             height: unit($lheight);
-            line-height:unit($lheight);
+            line-height: unit($lheight);
         }
     }
 
@@ -63,13 +72,31 @@ $lheight:96;
         height: 100%;
         top: unit(0);
         text-align: center;
-        right: unit(5);
+        right: unit(10);
         transition: all .3s;
         pointer-events: none;
-
+        width: unit(24);
     }
 
-    @include e(suffix-inner){
+    @include e(suffix-inner) {
         pointer-events: all;
+        height: unit(24);
+        width: unit(24);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: unit(-12);
+        margin-left: unit(-12);
+        display: block;
+        font-size: unit(24);
+        line-height: unit(24);
+        .icon-qingkong {
+
+            cursor: pointer;
+
+            text-align: center;
+            color: #999;
+            font-size: unit(12);
+        }
     }
 }
