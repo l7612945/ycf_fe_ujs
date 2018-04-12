@@ -44,6 +44,18 @@
         <y-input :value="value1" :placeholder="placeholder" status='error'></y-input>
       </div>
       <div class="input_box">
+        suffix-icon:
+        <y-input :value="value1" :placeholder="placeholder" suffix-icon="icon-yonghu"></y-input>
+      </div>
+      <div class="input_box">
+        prefix-icon:
+        <y-input :value="value1" :placeholder="placeholder" prefix-icon="icon-yonghu"></y-input>
+      </div>
+      <div class="input_box">
+        noboder:
+        <y-input :value="value1" :placeholder="placeholder" :noboder=true prefix-icon="icon-yonghu"></y-input>
+      </div>
+      <div class="input_box">
         events:
         <y-input :value="value1" :placeholder="placeholder" @blur='onblur' @focus='onfocus'></y-input>
       </div>

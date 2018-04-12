@@ -3,7 +3,7 @@ $element-separator: '__';
 $modifier-separator: '--';
 $state-prefix: 'is-';
 $browser-default-font-size:750;
-$isrem: true;
+
 
 
 //颜色
@@ -28,7 +28,7 @@ $success-border-color: $success-bg-color;
 $danger-border-color: $danger-bg-color;
 
 $focus-border-color: #363636;
-$primary-focus-border-color: #2600ff;
+$primary-focus-border-color: #139ae8;
 $success-focus-border-color: #3c8d13;
 $danger-focus-border-color: #ff9000;
 
@@ -50,3 +50,4 @@ $large-font-size: 48;
 $mini-width: 120;
 $mini-height: 44;
 $mini-font-size: 24;
+$isrem: true;

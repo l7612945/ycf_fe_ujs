@@ -42,8 +42,8 @@ export default {
       defalut: "button"
     },
     autofocus: {
-      type: String,
-      default: "false"
+      type: Boolean,
+      default: false
     }
   },
   methods: {

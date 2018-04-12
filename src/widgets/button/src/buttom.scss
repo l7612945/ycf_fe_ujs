@@ -9,7 +9,7 @@ $border-raidus: 8;
 
 $width: $normal-width;
 $height:$normal-height;
-$font-size: $normal-font-size;
+$font-size: unit($normal-font-size);
 
 
 // 垂直居中
@@ -119,18 +119,18 @@ $font-size: $normal-font-size;
     @include m(large){
         width: unit($large-width);
         @include verticalCenter($large-height);
-        font-size: $large-font-size;
+       
     }
 
     @include m(small){
         width: unit($small-width);
         @include verticalCenter($small-height);
-        font-size: $small-font-size;
+       
     }
 
     @include m(mini){
         width: unit($mini-width);
         @include verticalCenter($mini-height);
-        font-size: $mini-font-size;
+       
     }
 }

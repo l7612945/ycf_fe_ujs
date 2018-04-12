@@ -1,0 +1,41 @@
+@include b(login) {
+  width: unit(500);
+  margin: 0 auto;
+  @include e(lable) {
+    height:  unit(60);
+    border: 1px solid #efefef;
+    border-radius:  unit(40);
+    width: unit(460);
+    margin-bottom:  unit(30);
+    padding:  unit(10)  unit(20);
+    .y-input{
+      width:  unit(460);
+      .iconfont{
+        font-size:  unit(30);
+        color: #64c6ff;
+        margin-top:  unit(5);
+        display: block;
+      }
+    }
+  }
+  @include e(submit) {
+    height:  unit(80);
+    text-align: center;
+    width: unit(500);
+    margin-bottom:  unit(50);
+    line-height: unit(80);
+    .y-button{
+      width: 100%;
+      box-shadow: 0  unit(10) unit(15) #7fcbf6;
+    }
+  }
+  @include e(links) {
+    a{
+      color: #999;
+      font-size:  unit(20);
+    }
+  }
+  @include e(forget) {
+    text-align: right;
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1,user-scalable=no">
+    <title>_widgets/button</title>
+    <link href="../../../favicon.png" rel="icon" sizes="32x32" type="image/png">
+    <style>
+      button {
+        margin-left: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  <link href="../vendor/index.css" rel="stylesheet"></head>
+
+  <body>
+    <div id="app">
+      <div><span class="iconfont icon-yonghu"></span></div>
+      <y-button>default</y-button>
+      <y-button disabled>disabled</y-button>
+      <y-button pill>pill</y-button>
+      <br>
+      <y-button type="primary">primary</y-button>
+      <y-button type="primary" disabled>disabled</y-button>
+      <y-button type="primary" pill>primary</y-button>
+      <br>
+      <y-button type="success">success</y-button>
+      <y-button type="success" disabled>disabled</y-button>
+      <y-button type="success" pill>success</y-button>
+      <br>
+      <y-button type="danger">danger</y-button>
+      <y-button type="danger" disabled>disabled</y-button>
+      <y-button type="danger" pill>danger</y-button>
+      <br>
+      <y-button size="large">large</y-button>
+      <y-button size="large" disabled>large</y-button>
+      <y-button size="large" pill>pill</y-button>
+      <br>
+      <y-button size="medium">medium</y-button>
+      <y-button size="medium" disabled>disabled</y-button>
+      <y-button size="medium" pill>medium</y-button>
+      <br>
+      <y-button size="small">small</y-button>
+      <y-button size="small" disabled>disabled</y-button>
+      <y-button size="small" pill>pill</y-button>
+      <br>
+      <y-button size="mini">mini</y-button>
+      <y-button size="mini" disabled>disabled</y-button>
+      <y-button size="mini" pill>mini</y-button>
+      <br>
+      支持的事件 click、focus、blur
+      <y-button @click="handleClick" @focus="handleFocus" @blur="handleBlur">default</y-button>
+      <br>
+    </div>
+    <script src="https://unpkg.com/vue@2.5.3/dist/vue.js" type="text/javascript"></script>
+  <script type="text/javascript" src="../vendor/index.js"></script><script type="text/javascript" src="../widgets/button/index.js"></script></body>
+
+</html>

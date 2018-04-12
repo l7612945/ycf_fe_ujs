@@ -13,13 +13,28 @@
         @focus="handleFocus"
         v-bind:class='[{
           "is-error":status=="error",
-          "is-disabled": disabled
+          "is-disabled": inputDisabled,
+          "y-input--prefix": $slots.prefix || prefixIcon,
+          "y-input--suffix": $slots.suffix || suffixIcon,
+          "is-noboder":noboder
         }]'
       >
-      <span v-if="showClear" class="y-input__suffix">
-        <span class="y-input__suffix-inner">
-            <i class="iconfont icon-qingkong" @click="clear"></i>
-        </span>
+      <span  v-if="$slots.suffix || suffixIcon || showClear " class="y-input__suffix">
+          <template v-if="showClear">
+            <span class="y-input__suffix-inner">
+              <i class="iconfont icon-qingkong" @click="clear"></i>
+            </span>
+          </template>
+           <template v-else>
+            <span class="y-input__suffix-inner"  v-if="suffixIcon">
+              <i class="iconfont" :class="suffixIcon"></i>
+            </span>
+          </template>
+      </span>
+      <span  v-if="$slots.prefix || prefixIcon || showClear " class="y-input__prefix">
+           <span class="y-input__prefix-inner"  v-if="prefixIcon">
+              <i class="iconfont" :class="prefixIcon"></i>
+            </span>
       </span>
     </template>
   </div>
@@ -58,6 +73,10 @@
       readonly: Boolean,
       autofocus: Boolean,
       disabled: {
+        type: Boolean,
+        default: false
+      },
+      noboder:{
         type: Boolean,
         default: false
       },

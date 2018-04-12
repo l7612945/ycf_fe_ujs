@@ -41,6 +41,15 @@ $lheight:$large-height;
             color: $disabled-color;
             cursor: not-allowed;
         }
+        @include when (noboder) {
+            border: 0px;
+        }
+    }
+    @include m(suffix) {
+            padding: 0 unit(55) 0 unit(15);
+    }
+    @include m(prefix) {
+            padding: 0 unit(15) 0 unit(55);
     }
     @include m(mini) {
         height: unit($mheight);
@@ -72,31 +81,64 @@ $lheight:$large-height;
         height: 100%;
         top: unit(0);
         text-align: center;
-        right: unit(10);
-        transition: all .3s;
+        right: unit(20);
         pointer-events: none;
-        width: unit(24);
+        width: unit(30);
     }
 
     @include e(suffix-inner) {
         pointer-events: all;
-        height: unit(24);
-        width: unit(24);
+        height: unit(30);
+        width: unit(30);
         position: absolute;
         top: 50%;
         left: 50%;
-        margin-top: unit(-12);
-        margin-left: unit(-12);
+        margin-top: unit(-15);
+        margin-left: unit(-15);
         display: block;
         font-size: unit(24);
         line-height: unit(24);
+         text-align: center;
+        .iconfont{
+               color:#c0c4cc;
+               font-size:unit(24);    
+               text-align: center;
+            }
         .icon-qingkong {
-
             cursor: pointer;
-
             text-align: center;
-            color: #999;
+            color: #666;
             font-size: unit(12);
         }
+    }
+
+    @include e(prefix) {
+        position: absolute;
+        height: 100%;
+        top: unit(0);
+        text-align: center;
+        left: unit(15);
+        pointer-events: none;
+        width: unit(30);
+    }
+
+    @include e(prefix-inner) {
+        pointer-events: all;
+        height: unit(30);
+        width: unit(30);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: unit(-15);
+        margin-left: unit(-15);
+        display: block;
+        font-size: unit(24);
+        line-height: unit(24);
+         text-align: center;
+        .iconfont{
+               color:#c0c4cc;
+               font-size:unit(24);    
+               text-align: center;
+            }
     }
 }

@@ -8,10 +8,15 @@
   "widgets/input.js.map": "../widgets/input/index.js.map",
   "widgets/col.js": "../widgets/col/index.js",
   "widgets/col.js.map": "../widgets/col/index.js.map",
-  "module/search2.js": "../module/search2/index.js",
-  "module/search2.css": "../module/search2/index.css",
-  "module/search2.js.map": "../module/search2/index.js.map",
+  "widgets/button.js": "../widgets/button/index.js",
+  "widgets/button.js.map": "../widgets/button/index.js.map",
   "module/search.js": "../module/search/index.js",
   "module/search.css": "../module/search/index.css",
-  "module/search.js.map": "../module/search/index.js.map"
+  "module/search.js.map": "../module/search/index.js.map",
+  "module/login.js": "../module/login/index.js",
+  "module/login.css": "../module/login/index.css",
+  "module/login.js.map": "../module/login/index.js.map",
+  "font/iconfont.eot?t=1523457347983": "../font/iconfont.eot",
+  "font/iconfont.ttf?t=1523457347983": "../font/iconfont.ttf",
+  "iconfont.svg?t=1523457347983": "../2745670d019ed2042eb9dc9a7b19a4a8.svg"
 }

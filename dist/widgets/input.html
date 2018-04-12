@@ -3,17 +3,63 @@
   <head>
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1,user-scalable=no">
     <title>_widgets/input</title>
 	<link href="../../../favicon.png" rel="icon" sizes="32x32" type="image/png">
-	
+	<style>
+      .input_box {
+        margin-left: 20px;
+        margin-top: 20px;
+      }
+    </style>
   <link href="../vendor/index.css" rel="stylesheet"></head>
   <body>
-      <div id="app">
-        啊
-			<div><y-input :value="value1" :placeholder="placeholder"></y-input></div><br>
-			<div><y-input :value="value1" :placeholder="placeholder" size='small'></y-input></div><br>
-			<div><y-input :value="value1" :placeholder="placeholder" size='large'></y-input></div>
-</div> 
+    <div id="app">
+      <div class="input_box">
+        普通:
+        <y-input :value="value1" :placeholder="placeholder"></y-input>
+      </div>
+			<div class="input_box">
+        mini:
+        <y-input :value="value1" :placeholder="placeholder" size='mini'></y-input>
+      </div>
+      <div class="input_box">
+        small:
+        <y-input :value="value1" :placeholder="placeholder" size='small'></y-input>
+      </div>
+      <div class="input_box">
+        large:
+        <y-input :value="value1" :placeholder="placeholder" size='large'></y-input>
+      </div>
+      <div class="input_box">
+        不可输入:
+        <y-input :value="value1" :placeholder="placeholder" :disabled=true></y-input>
+      </div>
+      <div class="input_box">
+        可清空:
+        <y-input :value="value1" :placeholder="placeholder" clearable></y-input>
+      </div>
+      <div class="input_box">
+        错误:
+        <y-input :value="value1" :placeholder="placeholder" status='error'></y-input>
+      </div>
+      <div class="input_box">
+        suffix-icon:
+        <y-input :value="value1" :placeholder="placeholder" suffix-icon="icon-yonghu"></y-input>
+      </div>
+      <div class="input_box">
+        prefix-icon:
+        <y-input :value="value1" :placeholder="placeholder" prefix-icon="icon-yonghu"></y-input>
+      </div>
+      <div class="input_box">
+        noboder:
+        <y-input :value="value1" :placeholder="placeholder" :noboder=true prefix-icon="icon-yonghu"></y-input>
+      </div>
+      <div class="input_box">
+        events:
+        <y-input :value="value1" :placeholder="placeholder" @blur='onblur' @focus='onfocus'></y-input>
+      </div>
+    </div>
   	<script src="https://unpkg.com/vue@2.5.3/dist/vue.js" type="text/javascript"></script>
 	<!-- <script src="../../widgets/input/index.js" type="text/javascript"></script> -->
   <script type="text/javascript" src="../vendor/index.js"></script><script type="text/javascript" src="../widgets/input/index.js"></script></body>
