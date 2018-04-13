@@ -35,7 +35,7 @@ let config = merge(common,{
     },
   output: {
     filename: 'iview.js',
-    path: path.resolve(__dirname, './mybuild'),
+    path: path.resolve(__dirname, '../mybuild'),
     publicPath: './mybuild',
     libraryTarget: 'umd',
     library: 'iview',
@@ -49,7 +49,7 @@ let config = merge(common,{
    },
    plugins: [
       new ManifestPlugin(),
-      new CleanWebpackPlugin('./mybuild')
+      new CleanWebpackPlugin('../mybuild')
  ]
 });
 

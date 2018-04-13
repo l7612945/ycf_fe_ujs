@@ -8,7 +8,6 @@ window.ve = new vue({
   data:function(){
     return {
        value1:"",
-       placeholder:'请输入文字'
     }
   },
   components: { 

@@ -5,26 +5,30 @@
     <title>Getting Started</title>
      <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="../mybuild/main/index.css">
+    <style>
+      .logo{
+        width: 300px;
+        height: 300px;
+        margin: 0 auto 0px;
+        display: block;
+      }
+    </style>
   </head>
   <body>
   	<div id="app">
-  		
-  		{{message}}
-  		<sbox :value1="value1" :value2="value2" :placeholder="placeholder"></sbox>
+      <img src="logo.jpg" alt="" class="logo">
+  		 <y-login :name='name' :password='password'></y-login>
   	</div>
   	<script src="https://unpkg.com/vue@2.5.3/dist/vue.js"></script>
     <script src="../mybuild/iview.js"></script>
     <script>
-    	console.log(iview);
     	// Vue.use(iview.default.components.loginbox);
     	var app = new Vue({
 		  el: '#app',
 		  data: {
-        value1:'输入文字001',
-        value2:'输入文字002',
-        placeholder:'请输入文字',
-		    message: '输入模块例子',
-        status:''
+        name: '',
+        password:'',
+        placeholder: '请输入文字'
 		  },
 		  // components: { 
 		  //   'loginbox':iview.default.components.loginbox

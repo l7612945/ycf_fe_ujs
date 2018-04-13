@@ -1,5 +1,8 @@
 {
   "main.js": "./mybuildiview.js",
   "main.css": "./mybuildmain/index.css",
-  "main.js.map": "./mybuildiview.js.map"
+  "main.js.map": "./mybuildiview.js.map",
+  "font/iconfont.eot?t=1523457347983": "./mybuildfont/iconfont.eot",
+  "iconfont.svg?t=1523457347983": "./mybuild2745670d019ed2042eb9dc9a7b19a4a8.svg",
+  "font/iconfont.ttf?t=1523457347983": "./mybuildfont/iconfont.ttf"
 }

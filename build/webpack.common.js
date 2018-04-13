@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin'); //生成html文件
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const printTimePlugin = require('print-time-webpack');
 
 let config = {
     entry: {
@@ -22,7 +23,11 @@ let config = {
         rules: [{
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
-                    use: ["style-loader","css-loader"]
+                    fallback: 'style-loader',
+                    use: { loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                        } },
                 })
             },
             {
@@ -87,7 +92,8 @@ let config = {
           cssProcessor: require('cssnano'),
           cssProcessorOptions: { discardComments: { removeAll: true } },
           canPrint: true
-        })
+        }),
+        new printTimePlugin()
     ]
 };
 

@@ -1,14 +1,14 @@
 //添加需要编译的模块
-import sbox from '../src/module/search/index.js';
+import ylogin from '../src/module/login/index.js';
 
 
 
 //配置
 const components = {
-	sbox
+	ylogin
 };
 const iview = {
-   sbox:sbox
+   "y-login":ylogin
 };
 const install = function(Vue, opts = {}) {
     if (install.installed) return;

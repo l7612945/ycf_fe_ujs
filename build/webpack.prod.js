@@ -45,7 +45,7 @@ let config = merge(common, {
     },
     output: {
         filename: '[name]/index.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../dist'),
         publicPath: '../'
     },
     devtool: 'cheap-module-source-map',
@@ -56,7 +56,7 @@ let config = merge(common, {
     },
     plugins: [
         new ManifestPlugin(),
-        new CleanWebpackPlugin('./dist'),
+        new CleanWebpackPlugin('../dist'),
         new BundleAnalyzerPlugin()
     ]
 });

@@ -1,8 +1,8 @@
-import input from './src/col.js';
+import col from './src/col.js';
 // import vue from'vue';
 /* istanbul ignore next */
-input.install = function(Vue) {
-  vue.component(input.name, input);
+col.install = function(Vue) {
+  vue.component(col.name, col);
 };
 
-export default input;
+export default col;

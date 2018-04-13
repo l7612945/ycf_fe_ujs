@@ -1,6 +1,6 @@
-
 import vue from'vue';
 import yinput from'./src/input.vue';
+import config from '../../commonjs/config.js';
 
 
 window.ve = new vue({
@@ -17,5 +17,16 @@ window.ve = new vue({
    },
   mounted:function(){
     this.showApp = true;
+  },
+  methods: {
+    onblur(){
+      console.log('onblur');
+    },
+    onfocus(){
+      console.log('focus');
+    },
+    handleBlur(){
+      console.log('blur');
+    }
   }
 })
